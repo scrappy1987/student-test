@@ -14,7 +14,9 @@ public class ReverseTest {
 		
 		int[] reversedArray = rev.reverse(nameOfArray);
 		
-		assertEquals(reversedArray[0], 4);
+		int[] actualReversedArray = {4, 8, 7, 5, 4, 2};
+		
+		assertArrayEquals(reversedArray, actualReversedArray);
 		
 	}
 	
