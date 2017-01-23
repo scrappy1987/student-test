@@ -17,7 +17,7 @@ public class LetterCounter {
 	 * @return number of letters on the specified line of the pom.xml file
 	 * @throws IOException
 	 */
-	public int countLetters(int lineNumber) throws IOException {
+	public int countLetters(int lineNumber) throws IOException, IndexOutOfBoundsException {
 		// Initialise result holder
 		int result = 0;
 		// Get the string to pattern match from pom.xml by specified line number

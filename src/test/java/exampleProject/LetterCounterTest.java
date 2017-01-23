@@ -15,6 +15,9 @@ public class LetterCounterTest {
 		} catch (IOException e) {
 			fail("IOException");
 		}
+		catch (IndexOutOfBoundsException e) {
+			fail("IndexOutOfBoundsException");
+		}
 	}
 
 }
