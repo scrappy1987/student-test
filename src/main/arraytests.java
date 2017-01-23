@@ -12,17 +12,17 @@ public class arraytests {
 	public void test() {
 		MedTask med = new MedTask();
 		int[] newArray = new int[3];
-		newArray[0] = 0;
-		newArray[1] = 1;
-		newArray[2] = 2;
-		newArray[3] = 3;
+		newArray[0] = 10;
+		newArray[1] = 20;
+		newArray[2] = 30;
+		newArray[3] = 40;
 		
 		int[] results = med.arrayReverse(newArray);
 		
-		assertEquals(results[0], 3);
-		assertEquals(results[1], 2);
-		assertEquals(results[2], 1);
-		assertEquals(results[3], 0);
+		assertEquals(results[0], 40);
+		assertEquals(results[1], 30);
+		assertEquals(results[2], 20);
+		assertEquals(results[3], 10);
 	}
 
 }
