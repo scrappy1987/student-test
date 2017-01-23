@@ -16,11 +16,8 @@ public class TextReader
 		
 		String out = "";
 		int counter = 0;
-		while(i != counter)
-		{
+		while(i != counter++)
 			out = bfr.readLine();
-			counter++;
-		}
 
 		System.out.println(out);
 		return out.length();
