@@ -1,5 +1,5 @@
 package exampleProject;
-
+//comment
 public class Adder {
 
 	private int value1;
