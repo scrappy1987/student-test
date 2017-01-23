@@ -6,7 +6,8 @@ import org.junit.Test;
 public class AdderTest {
 
 	@Test
-	public void test() {
+	public void test()
+	{
 		Adder adder1 = new Adder(1, 1);
 		Adder adder2 = new Adder(2, 2);
 		Adder adder3 = new Adder(3, 3);

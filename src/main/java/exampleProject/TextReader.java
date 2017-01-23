@@ -6,13 +6,10 @@ import java.util.*;
 
 public class TextReader
 {
-	static FileReader flr;
-	static BufferedReader bfr;
-	
-	public static int ReadLine(int i) throws IOException
+	public int ReadLine(int i) throws IOException
 	{
-		flr = new FileReader("FileToRead.txt");
-		bfr = new BufferedReader(flr);
+		FileReader flr = new FileReader("FileToRead.txt");
+		BufferedReader bfr = new BufferedReader(flr);
 		
 		String out = "";
 		int counter = 0;
@@ -20,6 +17,8 @@ public class TextReader
 			out = bfr.readLine();
 
 		System.out.println(out);
+		bfr.close();
+		flr.close();
 		return out.length();
 	}
 }

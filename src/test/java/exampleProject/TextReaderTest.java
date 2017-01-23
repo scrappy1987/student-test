@@ -12,13 +12,14 @@ public class TextReaderTest
 	@Test
 	public void test() throws IOException
 	{
-		int i = TextReader.ReadLine(1);
+		TextReader r = new TextReader();
+		int i = r.ReadLine(1);
 		assertEquals(i,4);
-		i = TextReader.ReadLine(2);
+		i = r.ReadLine(2);
 		assertEquals(i,5);
-		i = TextReader.ReadLine(3);
+		i = r.ReadLine(3);
 		assertEquals(i,6);
-		i = TextReader.ReadLine(4);
+		i = r.ReadLine(4);
 		assertEquals(i,24);
 	}
 }
