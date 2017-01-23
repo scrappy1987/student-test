@@ -1,12 +1,9 @@
 package tests;
 
-public class EasyTask {
-	public EasyTask(){
-		
-	}
-
-	public int multiply(int i, int j) {
-		// TODO Auto-generated method stub
+public class EasyTask
+{
+	public int multiply(int i, int j)
+	{
 		return i*j;
 	}
 }
