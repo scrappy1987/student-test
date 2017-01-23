@@ -1,4 +1,4 @@
-package main;
+package exampleProject;
 
 public class Multiplier
 {

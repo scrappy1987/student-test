@@ -1,7 +1,6 @@
-package test;
-
+package exampleProject;
 import static org.junit.Assert.*;
-import main.ArraySwitcher;
+import exampleProject.ArraySwitcher;
 
 import org.junit.Test;
 

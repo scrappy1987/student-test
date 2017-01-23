@@ -1,6 +1,6 @@
-package test;
+package exampleProject;
 import static org.junit.Assert.*;
-import main.Multiplier;
+import exampleProject.Multiplier;
 
 import org.junit.Test;
 
