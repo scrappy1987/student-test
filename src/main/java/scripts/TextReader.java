@@ -1,4 +1,4 @@
-package exampleProject;
+package scripts;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.util.*;
 
 public class TextReader
 {
-	public int ReadLine(int i) throws IOException
+	public int readLine(int i) throws IOException
 	{
 		FileReader flr = new FileReader("FileToRead.txt");
 		BufferedReader bfr = new BufferedReader(flr);

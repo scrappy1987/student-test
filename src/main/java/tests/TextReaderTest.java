@@ -1,11 +1,11 @@
-package exampleProject;
+package tests;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
 
-import exampleProject.TextReader;
-
 import org.junit.Test;
+
+import scripts.TextReader;
 
 public class TextReaderTest
 {
@@ -13,13 +13,13 @@ public class TextReaderTest
 	public void test() throws IOException
 	{
 		TextReader r = new TextReader();
-		int i = r.ReadLine(1);
+		int i = r.readLine(1);
 		assertEquals(i,4);
-		i = r.ReadLine(2);
+		i = r.readLine(2);
 		assertEquals(i,5);
-		i = r.ReadLine(3);
+		i = r.readLine(3);
 		assertEquals(i,6);
-		i = r.ReadLine(4);
+		i = r.readLine(4);
 		assertEquals(i,24);
 	}
 }
