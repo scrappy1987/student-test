@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Hard 
 {
-	public int countLetters()
+	/*public int countLetters()
 	{
 		BufferedReader br = null;
 		String myText = null;	
@@ -27,5 +27,5 @@ public class Hard
 			}
 		}
 		return myText.length();
-	}
+	}*/
 }
