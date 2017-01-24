@@ -3,37 +3,48 @@ package exampleProject;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.junit.Test;
 
+/**
+ * @author      Chris Doodson
+ * @author 		Russell Claxton
+ * @version     1.0          (current version number of program)
+ * @since       1.0          (the version of the package this class was first added to)
+ */
 public class TextLineCounterTest {
 
-	/**
-	 * Ingests a text file into an array list
-	 * @result the array list would be the size of the amount of lines in the text file.
-	 */
+	private static final Logger LOGGER = Logger.getLogger( TextLineCounter.class.getName() );
+	
 	@Test
 	public void IngestTest() {
 		TextLineCounter textCount = new TextLineCounter();
-		ArrayList<String> FileContents = new ArrayList<String>(); 	
+		ArrayList<String> fileContents = new ArrayList<String>(); 	
 		
-		FileContents = textCount.IngestTextFile();
+		try {
+			fileContents = textCount.IngestTextFile();
+		} catch (FileNotFoundException e) {
+			LOGGER.log( Level.SEVERE, e.toString(), e );
+		}
 		
-		assertEquals("",7, FileContents.size()); // supplied file has 7 lines inside
+		assertEquals("",7, fileContents.size()); // supplied file has 7 lines inside
 	}
 	
-	/**
-	 * The amount of characters in a line is correctly counted
-	 * 
-	 * @result As Above. 97 characters is the expected answer for first line.
-	 */
 	@Test
 	public void CountLineTest(){
 		TextLineCounter textCount = new TextLineCounter();
 		
-		int lineCount = textCount.CountLineLetters(1); // Specified to use first line of text file
+		int lineCount = 0;
+		try {
+			lineCount = textCount.CountLineLetters(1);
+		} catch (FileNotFoundException e) {
+			LOGGER.log( Level.SEVERE, e.toString(), e );
+		} // Specified to use first line of text file
 	
 		assertEquals("No",97, lineCount); // 97 is the expected amount of chars on first line
 	}

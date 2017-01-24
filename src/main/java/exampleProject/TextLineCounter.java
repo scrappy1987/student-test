@@ -1,8 +1,11 @@
 package exampleProject;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -13,26 +16,16 @@ import java.util.Scanner;
  */
 public class TextLineCounter {
 
-	/**
-	 * This String holds the file path to the text file.
-	 */
+	private static final Logger LOGGER = Logger.getLogger( TextLineCounter.class.getName() );
+	
 	private String filePath = null;
 	
-	/**
-	 * This ArrayList holds the contents of the textfile on a line per element basis..
-	 */
-	private ArrayList<String> FileContents = new ArrayList<String>();
+	private ArrayList<String> fileContents = new ArrayList<String>();
 	
-	 /** 
-	    * Class default constructor.
-	 */
 	TextLineCounter (){
 		filePath = "./HardTaskTest.txt"; // default path to file		
 	}
 	
-	/** 
-	    * Class constructor with path String.
-	*/
 	TextLineCounter (String fPath){
 		filePath = fPath;
 	}
@@ -40,39 +33,32 @@ public class TextLineCounter {
 	/**
 	 * Finds text file and ingests its contents into 
 	 * an array list on a line by element basis.
-	 *
+	 * @throws FileNotFoundException 
 	 */
-	public ArrayList<String> IngestTextFile() {
-		ArrayList<String> FileContents = new ArrayList<String>(); 	
-		Scanner s = null;
-		try{
-			s = new Scanner(new File(filePath));
-			
+	public ArrayList<String> IngestTextFile() throws FileNotFoundException {
+		Scanner s = new Scanner(new File(filePath));
+		
+		try{			
 			while (s.hasNextLine()){
-				FileContents.add(s.nextLine());
+				fileContents.add(s.nextLine());
 			}
 		}
 		catch(Exception e){
-			System.out.println("Error reading from file.");
+			LOGGER.log( Level.SEVERE, e.toString(), e );
 		}
 		finally{
 			s.close();
 		}		
-		return FileContents;
+		return fileContents;
 	}
 	
 	/**
 	 * Reads the file into AL, attains specific line, regex on line to remove 
 	 * whitespace and unwanted characters and then counts characters
-	 * 
-	 * TO-DO: add checks for invalid line number and bad arraylist after function.
-	 *
-	 * @param lineNo  Specifies the line to count letters of
 	 */
-	public int CountLineLetters(int lineNo) { // -1 on line
-		ArrayList<String> FileContents = new ArrayList<String>();
-		FileContents = IngestTextFile();
-		String textLine = FileContents.get(lineNo-1); 
+	public int CountLineLetters(int lineNo) throws FileNotFoundException { // -1 on line
+		fileContents = IngestTextFile();
+		String textLine = fileContents.get(lineNo-1); 
 		textLine = textLine.replaceAll("[^A-Za-z]+", "");
 		
 		return textLine.length();
