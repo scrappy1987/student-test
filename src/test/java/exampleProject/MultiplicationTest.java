@@ -1,7 +1,6 @@
 package exampleProject;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class MultiplicationTest {
