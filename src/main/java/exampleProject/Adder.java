@@ -2,6 +2,7 @@ package exampleProject;
 
 public class Adder {
 
+	// This is a comment
 	private int value1;
 	private int value2;
 
