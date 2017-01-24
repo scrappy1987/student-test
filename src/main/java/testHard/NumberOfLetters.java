@@ -13,7 +13,7 @@ public class NumberOfLetters {
 		
 		BufferedReader bufferIn = new BufferedReader(new FileReader("linecount.txt"));
 		
-		String line ="";
+		String line;
 		String actualLine = "";
 		int count = 0;
 		
@@ -26,8 +26,6 @@ public class NumberOfLetters {
 				//break when we find it
 				break;
 			}
-			
-			//String[] lines = line.split("(?!^)");
 		}
 		
 		//count the characters in the given line
